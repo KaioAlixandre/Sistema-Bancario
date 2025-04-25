@@ -147,6 +147,10 @@ public class TelaCadastro extends javax.swing.JFrame {
         boolean s = v.verificarSenha(String.valueOf(txtSenha.getPassword()));
         boolean t = v.verificarTipo(txtTipo.getText());
         if (n && s && t){
+            Banco b = new Banco();
+            b.setNome(txtNome.getText());
+            b.setTipo(txtTipo.getText());
+            b.setSenha(txtSenha.getToolTipText());
             tela.setVisible(true);
             this.dispose();
         } else {
