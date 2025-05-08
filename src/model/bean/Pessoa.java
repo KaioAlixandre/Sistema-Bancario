@@ -1,5 +1,5 @@
 
-package kaioestudos;
+package model.bean;
 
 public class Pessoa {
     //Atributos

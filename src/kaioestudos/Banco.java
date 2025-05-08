@@ -1,6 +1,8 @@
 
 package kaioestudos;
 
+import model.bean.Pessoa;
+
 public class Banco extends Pessoa {
     //Atributos
     private String tipo;
