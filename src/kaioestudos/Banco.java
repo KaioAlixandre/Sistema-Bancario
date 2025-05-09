@@ -1,6 +1,7 @@
 
 package kaioestudos;
 
+import java.sql.Connection;
 import model.bean.Pessoa;
 
 public class Banco extends Pessoa {
@@ -9,7 +10,7 @@ public class Banco extends Pessoa {
     
     //Metodos
     
-    public void sacar(int s){
+    public void sacar(double s){
         if (s < this.saldo) {
             setSaldo(getSaldo() - s);
         } else {
@@ -18,11 +19,11 @@ public class Banco extends Pessoa {
     }
     
     public void depositar(int d){
-        setSaldo(getSaldo() + d);
+        this.saldo += d;
     }
     
     public void emprestimo(){
-        setSaldo(getSaldo() + 15000);
+        setSaldo((getSaldo() + 15000));
     }
     
     public void pagarEmprestimo(){
@@ -31,9 +32,9 @@ public class Banco extends Pessoa {
     
     //Metodos Especiais
     public Banco() {
-        if (getTipo().equals("CC")){
+        if ("CC".equals(getTipo())){
           saldo = 50;  
-        } else if (getTipo().equals("CP")){
+        } else if ("CP".equals(getTipo())){
             saldo = 150;
         }
         
@@ -47,11 +48,11 @@ public class Banco extends Pessoa {
         this.nome = nome;
     }
 
-    public float getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(float saldo) {
+    public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 

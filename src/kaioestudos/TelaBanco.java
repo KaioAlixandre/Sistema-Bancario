@@ -42,7 +42,7 @@ public class TelaBanco extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(204, 0, 0));
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Apresentação2.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -92,6 +92,11 @@ public class TelaBanco extends javax.swing.JFrame {
         });
 
         jButton2.setText("Depositar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Emprestimo");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -149,10 +154,17 @@ public class TelaBanco extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        TelaDeposito tela = new TelaDeposito();
+        TelaEmprest tela = new TelaEmprest();
         tela.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        TelaDeposito tela = new TelaDeposito();
+        tela.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

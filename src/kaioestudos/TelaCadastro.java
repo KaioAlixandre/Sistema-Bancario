@@ -1,6 +1,11 @@
 
 package kaioestudos;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+
 
 public class TelaCadastro extends javax.swing.JFrame {
 
@@ -150,7 +155,22 @@ public class TelaCadastro extends javax.swing.JFrame {
             Banco b = new Banco();
             b.setNome(txtNome.getText());
             b.setTipo(txtTipo.getText());
-            b.setSenha(txtSenha.getToolTipText());
+            b.setSenha(String.valueOf(txtSenha.getPassword()));
+            try {
+                Connection conn = Conexao.conectar();
+                String sql = "INSERT INTO pessoa (nome, tipo, senha, saldo) VALUES (?, ?, ?, ?)";
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                stmt.setString(1, b.getNome());
+                stmt.setString(2, b.getTipo());
+                stmt.setString(3, b.getSenha());
+                stmt.setDouble(4, b.getSaldo());
+
+                stmt.executeUpdate();
+                System.out.println("Pessoa cadastrada com sucesso!");
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("Erro ao inserir: " + e.getMessage());
+            }
             tela.setVisible(true);
             this.dispose();
         } else {

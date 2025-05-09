@@ -1,6 +1,11 @@
 
 package kaioestudos;
-
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class Verificador {
     //Metodos
     
@@ -50,5 +55,24 @@ public class Verificador {
         
         
     }
+    public boolean validarLogin(String nome, String senha) {
+        try {
+            Connection conn = Conexao.conectar();
+            String sql = "SELECT * FROM pessoa WHERE nome = ? AND senha = ?";
+            
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            
+            stmt.setString(1, nome);
+            stmt.setString(2, senha);
+            
+            ResultSet rs = stmt.executeQuery();
+            return rs.next();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Nome ou senha Invalido");
+            return false;
+        }
+    }
+
     
 }

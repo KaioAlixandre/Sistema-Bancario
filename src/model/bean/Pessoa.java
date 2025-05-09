@@ -6,6 +6,6 @@ public class Pessoa {
     protected String nome;
     protected int idade;
     protected String sexo;
-    protected float saldo;
+    protected double saldo;
     protected String senha;
 }
