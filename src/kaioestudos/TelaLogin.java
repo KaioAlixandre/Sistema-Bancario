@@ -104,9 +104,12 @@ public class TelaLogin extends javax.swing.JFrame {
         if (r){
             tela.setVisible(true);
             this.dispose();
+            
         }
         else {
             lblText.setText("Nome ou senha invalido");
+            txtNome.setText("");
+            txtSenha.setText("");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

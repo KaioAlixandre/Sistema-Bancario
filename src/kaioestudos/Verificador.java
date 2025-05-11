@@ -73,6 +73,24 @@ public class Verificador {
             return false;
         }
     }
+    
+    public boolean validSenha(String senha){
+        try {
+            Connection conn = Conexao.conectar();
+            String sql = "SELECT * FROM pessoa WHERE senha = ?";
+            
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            
+            stmt.setString(1, senha);
+            
+            ResultSet rs = stmt.executeQuery();
+            return rs.next();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Nome ou senha Invalido");
+            return false;
+        }
+    }
 
     
 }

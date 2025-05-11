@@ -39,6 +39,7 @@ public class TelaEmprest extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +65,11 @@ public class TelaEmprest extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(204, 0, 0));
         jButton1.setForeground(new java.awt.Color(204, 0, 0));
         jButton1.setText("Simular");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         jLabel6.setText("Antecipe ate");
@@ -77,12 +83,26 @@ public class TelaEmprest extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(204, 0, 0));
         jButton2.setForeground(new java.awt.Color(204, 0, 0));
         jButton2.setText("Simular");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel9.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         jLabel9.setText("Simule ate");
 
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("R$ 15.000,00");
+
+        jButton3.setBackground(new java.awt.Color(255, 0, 0));
+        jButton3.setForeground(new java.awt.Color(255, 0, 0));
+        jButton3.setText("Voltar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -101,8 +121,12 @@ public class TelaEmprest extends javax.swing.JFrame {
                                 .addComponent(jLabel2))
                             .addComponent(jLabel6)
                             .addComponent(jLabel7)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel10))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(80, 80, 80)
                         .addComponent(jLabel5)
@@ -113,7 +137,7 @@ public class TelaEmprest extends javax.swing.JFrame {
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton2)))
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addGap(38, 38, 38))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,9 +163,12 @@ public class TelaEmprest extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel10))
+                    .addComponent(jButton3))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -158,6 +185,28 @@ public class TelaEmprest extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        TelaSenha tela = new TelaSenha();
+        tela.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        TelaBanco t = new TelaBanco();
+        t.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        TelaSenha tel = new TelaSenha();
+        tel.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,6 +246,7 @@ public class TelaEmprest extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

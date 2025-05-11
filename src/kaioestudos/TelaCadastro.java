@@ -1,6 +1,7 @@
 
 package kaioestudos;
 
+import java.awt.Component;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -176,12 +177,15 @@ public class TelaCadastro extends javax.swing.JFrame {
         } else {
             if (!n){
             lblResp.setText("Nome invalido");
+            txtNome.setText("");
             }
             if(!s){
                 lblSenha.setText("<html>Deve ter 8 caracter,letra maiuscula,<br>minuscula,numeros <br>e caractere especial<html>");
+                txtSenha.setText("");
             }
             if(!t){
                 lblTipo.setText("Tipo de conta Invalido");
+                txtTipo.setText("");
             }
         }
         
@@ -224,6 +228,12 @@ public class TelaCadastro extends javax.swing.JFrame {
         });
     }
 
+    @Override
+    public void setLocationRelativeTo(Component c) {
+        super.setLocationRelativeTo(c); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
