@@ -21,6 +21,9 @@ public class TelaDeposito extends javax.swing.JFrame {
      */
     public TelaDeposito() {
         initComponents();
+        setResizable(false); // Impede que o usuário redimensione a janela.
+        setLocationRelativeTo(null); // Centraliza a janela na tela.
+        setTitle("Deposito"); // Define o título da janela.
     }
 
     /**
