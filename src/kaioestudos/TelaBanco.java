@@ -22,6 +22,9 @@ public class TelaBanco extends javax.swing.JFrame {
      */
     public TelaBanco() {
         initComponents();
+        setResizable(false); // Impede que o usuário redimensione a janela.
+        setLocationRelativeTo(null); // Centraliza a janela na tela.
+        setTitle("Banco"); // Define o título da janela.
     }
 
     /**
