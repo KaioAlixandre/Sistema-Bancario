@@ -15,6 +15,9 @@ public class TelaInicial extends javax.swing.JFrame {
      */
     public TelaInicial() {
         initComponents();
+        setResizable(false); // Impede que o usuário redimensione a janela.
+        setLocationRelativeTo(null); // Centraliza a janela na tela.
+        setTitle("Inicio"); // Define o título da janela.
     }
 
     /**
