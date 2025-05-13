@@ -21,6 +21,9 @@ public class TelaSenha extends javax.swing.JFrame {
      */
     public TelaSenha() {
         initComponents();
+        setResizable(false); // Impede que o usuário redimensione a janela.
+        setLocationRelativeTo(null); // Centraliza a janela na tela.
+        setTitle("Senha"); // Define o título da janela.
     }
 
     /**
