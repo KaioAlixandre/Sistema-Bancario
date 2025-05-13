@@ -21,6 +21,9 @@ public class TelaTransferir extends javax.swing.JFrame {
      */
     public TelaTransferir() {
         initComponents();
+        setResizable(false); // Impede que o usuário redimensione a janela.
+        setLocationRelativeTo(null); // Centraliza a janela na tela.
+        setTitle("Transferir"); // Define o título da janela.
     }
 
     /**
