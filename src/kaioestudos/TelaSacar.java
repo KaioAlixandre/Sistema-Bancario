@@ -22,6 +22,9 @@ public class TelaSacar extends javax.swing.JFrame {
      */
     public TelaSacar() {
         initComponents();
+        setResizable(false); // Impede que o usuário redimensione a janela.
+        setLocationRelativeTo(null); // Centraliza a janela na tela.
+        setTitle("Sacar"); // Define o título da janela.
     }
 
     /**
